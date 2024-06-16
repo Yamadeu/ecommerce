@@ -1,6 +1,6 @@
-# dos
+# E-Commerce
 
-A new Flutter project.
+A new Flutter E-Commerce project.
 
 ## Getting Started
 
