@@ -15,6 +15,15 @@ class _WelcomeState extends State<Welcome> with TickerProviderStateMixin{
   late Animation _opacityAnimation;
 
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    Future.delayed(const Duration(seconds: 3),(){
+      Navigator.pushReplacementNamed(context, '/home');
+    });
+    super.initState();
+  }
+
 
   @override
   void dispose() {
@@ -42,22 +51,23 @@ class _WelcomeState extends State<Welcome> with TickerProviderStateMixin{
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
+      body: AnimatedBuilder(
+          animation: _sizeAnimation,
+          builder: (context,child){
+            return Opacity(
+              opacity: _opacityAnimation.value,
+              child: Container(
+                margin: EdgeInsets.only(top: _sizeAnimation.value),
+                child: child,
+              ),
+            );
+          },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          AnimatedBuilder(
-              animation: _sizeAnimation,
-              builder: (context,child){
-                return Opacity(
-                  opacity: _opacityAnimation.value,
-                  child: Container(
-                    margin: EdgeInsets.only(top: _sizeAnimation.value),
-                    child: child,
-                  ),
-                );
-              },
-          child: Center(child: Image.asset('assets/logo/logo.png',height: 250,)),
-          ),
+          Image.asset('assets/logo/logo.png',height: 250,),
         ],
+      ),
       ),
     );
   }

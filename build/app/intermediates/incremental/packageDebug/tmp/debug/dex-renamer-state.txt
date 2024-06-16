@@ -1,4 +1,4 @@
-#Sun Jun 16 12:31:50 WAT 2024
+#Sun Jun 16 12:53:11 WAT 2024
 base.0=C\:\\flutter_projects\\ecommerce\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
